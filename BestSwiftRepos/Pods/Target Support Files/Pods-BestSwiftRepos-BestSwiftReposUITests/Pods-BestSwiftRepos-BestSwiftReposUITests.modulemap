@@ -1,0 +1,6 @@
+framework module Pods_BestSwiftRepos_BestSwiftReposUITests {
+  umbrella header "Pods-BestSwiftRepos-BestSwiftReposUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
