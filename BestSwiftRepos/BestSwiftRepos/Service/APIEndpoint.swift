@@ -18,13 +18,26 @@ extension APIEndpoint {
     var path: String {
         switch self {
         case .repositories:
-            return "/search/repositories?q=language:swift&sort=stars"
+            return "/search/repositories"
         }
     }
     
+    var queryItems: [URLQueryItem] {
+        var queryItems: [URLQueryItem] = []
+        switch self {
+        case .repositories(let offset):
+            queryItems.append(contentsOf: [
+                URLQueryItem(name: "q", value: "language:swift"),
+                URLQueryItem(name: "per_page", value: offset.description)
+            ])
+        }
+        return queryItems
+    }
+    
     func makeUrl() throws -> URL {
-        let components = URLComponents(string: APIEndpoint.baseUrl + path)
-        
+        var components = URLComponents(string: APIEndpoint.baseUrl + path)
+        components?.queryItems = queryItems
+
         guard let url = components?.url else {
             throw APIError.invalidURL
         }

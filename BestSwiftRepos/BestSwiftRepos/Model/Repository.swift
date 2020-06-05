@@ -9,7 +9,7 @@
 import Foundation
 
 struct Repository: Codable {
-    let id: String
+    let id: Int
     let nodeId: String
     let name: String
     let fullName: String
@@ -17,22 +17,22 @@ struct Repository: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case nodeId
+        case nodeId = "node_id"
         case name
-        case fullName
+        case fullName = "full_name"
         case `private`
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(String.self, forKey: .id)
+        id = try values.decode(Int.self, forKey: .id)
         nodeId = try values.decode(String.self, forKey: .nodeId)
         name = try values.decode(String.self, forKey: .name)
         fullName = try values.decode(String.self, forKey: .fullName)
         `private` = try values.decode(Bool.self, forKey: .`private`)
     }
       
-    init(id: String, nodeId: String, name: String, fullName: String, `private`: Bool) {
+    init(id: Int, nodeId: String, name: String, fullName: String, `private`: Bool) {
         self.id = id
         self.nodeId = nodeId
         self.name = name

@@ -14,8 +14,8 @@ struct RepositoriesResult: Codable {
     let items: [Repository]
     
     enum CodingKeys: String, CodingKey {
-        case totalCount
-        case incompleteResults
+        case totalCount = "total_count"
+        case incompleteResults = "incomplete_results"
         case items
     }
     
