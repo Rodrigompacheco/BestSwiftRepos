@@ -7,33 +7,25 @@
 //
 
 import UIKit
+import SnapKit
 
 class RepositoriesListViewController: UIViewController {
 
-    
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        self.view.addSubview(tableView)
         
-        var backgroundView = UIView(frame: self.view.bounds)
-        backgroundView.backgroundColor = .blue
-        self.view.addSubview(backgroundView)
-        
-        
-        let apiProvider = APIProvider()
-        let endpoint = APIEndpoint.repositories(offset: 1)
-        
-        apiProvider.request(for: endpoint) { [weak self] (result: Result<RepositoriesResult, Error>) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let dataPackage):
-                print("SUCESSO")
-                print(dataPackage)
-            case .failure(_):
-                print("FALHOU")
-            }
+        tableView.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.equalToSuperview()
         }
+        
+//        tableView.register(for: UITableViewCell())
     }
 }

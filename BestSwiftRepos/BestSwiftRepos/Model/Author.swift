@@ -27,12 +27,4 @@ class Author: Codable {
         self.name = name
         self.avatar = avatar
     }
-    
-    func getName() -> String {
-        return name
-    }
-    
-    func getAvatarUrl() -> String {
-        return avatar
-    }
 }
