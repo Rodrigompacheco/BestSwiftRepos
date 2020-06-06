@@ -7,6 +7,7 @@ target 'BestSwiftRepos' do
 
   # Pods for BestSwiftRepos
   pod 'Kingfisher', '~> 4.0'
+  pod 'SnapKit', '~> 5.0.0'
 
 
   target 'BestSwiftReposTests' do
