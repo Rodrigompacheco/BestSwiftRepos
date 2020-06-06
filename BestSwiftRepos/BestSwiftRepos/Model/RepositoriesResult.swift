@@ -10,25 +10,21 @@ import Foundation
 
 struct RepositoriesResult: Codable {
     let totalCount: Int
-    let incompleteResults: Bool
     let items: [Repository]
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
-        case incompleteResults = "incomplete_results"
         case items
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         totalCount = try values.decode(Int.self, forKey: .totalCount)
-        incompleteResults = try values.decode(Bool.self, forKey: .incompleteResults)
         items = try values.decode([Repository].self, forKey: .items)
     }
     
-    init(totalCount: Int, incompleteResults: Bool, items: [Repository]) {
+    init(totalCount: Int, items: [Repository]) {
         self.totalCount = totalCount
-        self.incompleteResults = incompleteResults
         self.items = items
     }
 }

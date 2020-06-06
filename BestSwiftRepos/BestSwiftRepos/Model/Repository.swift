@@ -10,33 +10,29 @@ import Foundation
 
 struct Repository: Codable {
     let id: Int
-    let nodeId: String
     let name: String
-    let fullName: String
-    let `private`: Bool
+    let stars: Int
+    let author: Author
     
     enum CodingKeys: String, CodingKey {
         case id
-        case nodeId = "node_id"
         case name
-        case fullName = "full_name"
-        case `private`
+        case stars = "stargazers_count"
+        case author = "owner"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
-        nodeId = try values.decode(String.self, forKey: .nodeId)
         name = try values.decode(String.self, forKey: .name)
-        fullName = try values.decode(String.self, forKey: .fullName)
-        `private` = try values.decode(Bool.self, forKey: .`private`)
+        stars = try values.decode(Int.self, forKey: .stars)
+        author = try values.decode(Author.self, forKey: .author)
     }
       
-    init(id: Int, nodeId: String, name: String, fullName: String, `private`: Bool) {
+    init(id: Int, name: String, stars: Int, author: Author) {
         self.id = id
-        self.nodeId = nodeId
         self.name = name
-        self.fullName = fullName
-        self.private = `private`
+        self.stars = stars
+        self.author = author
     }
 }

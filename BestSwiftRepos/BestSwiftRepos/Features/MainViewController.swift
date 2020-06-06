@@ -21,13 +21,14 @@ class MainViewController: UIViewController {
         
         
         let apiProvider = APIProvider()
-        let endpoint = APIEndpoint.repositories(offset: 2)
+        let endpoint = APIEndpoint.repositories(offset: 1)
         
         apiProvider.request(for: endpoint) { [weak self] (result: Result<RepositoriesResult, Error>) in
             guard let self = self else { return }
             switch result {
             case .success(let dataPackage):
                 print("SUCESSO")
+                print(dataPackage)
             case .failure(_):
                 print("FALHOU")
             }
