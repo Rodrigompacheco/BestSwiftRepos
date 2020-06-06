@@ -29,7 +29,7 @@ class MainCoordinator: Coordinator {
 //        let viewController = CharactersListViewController(presenter: presenter)
 //        viewController.title = "Characters"
 //        navigationController.pushViewController(viewController, animated: false)
-        let viewController = MainViewController()
+        let viewController = RepositoriesListViewController()
         navigationController.pushViewController(viewController, animated: false)
     }
 }

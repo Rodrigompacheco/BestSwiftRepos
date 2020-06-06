@@ -8,8 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class RepositoriesListViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

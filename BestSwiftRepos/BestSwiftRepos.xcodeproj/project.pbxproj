@@ -15,7 +15,7 @@
 		41FB44EF24899F9100F11C9B /* BestSwiftReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44EE24899F9100F11C9B /* BestSwiftReposUITests.swift */; };
 		41FB45042489A25300F11C9B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45032489A25300F11C9B /* Coordinator.swift */; };
 		41FB45062489A26600F11C9B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45052489A26600F11C9B /* MainCoordinator.swift */; };
-		41FB45082489A3A100F11C9B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45072489A3A100F11C9B /* MainViewController.swift */; };
+		41FB45082489A3A100F11C9B /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45072489A3A100F11C9B /* RepositoriesListViewController.swift */; };
 		41FB450A2489A72100F11C9B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45092489A72100F11C9B /* APIError.swift */; };
 		41FB450C2489A76600F11C9B /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB450B2489A76600F11C9B /* APIEndpoint.swift */; };
 		41FB450E2489AAFD00F11C9B /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB450D2489AAFD00F11C9B /* APIProvider.swift */; };
@@ -23,6 +23,7 @@
 		41FB45142489B51A00F11C9B /* RepositoriesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45132489B51A00F11C9B /* RepositoriesResult.swift */; };
 		41FB45162489B52600F11C9B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45152489B52600F11C9B /* Repository.swift */; };
 		41FB4520248B365200F11C9B /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB451F248B365200F11C9B /* Author.swift */; };
+		41FB4525248C313B00F11C9B /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB4524248C313A00F11C9B /* UITableViewExtension.swift */; };
 		532848132A792C942BE4CCF3 /* Pods_BestSwiftRepos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45006DE56371FF0E91FA3D6 /* Pods_BestSwiftRepos.framework */; };
 		8AD68F2C7B10853B188492FD /* Pods_BestSwiftReposTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD292BE1A6AC1E8987B92F25 /* Pods_BestSwiftReposTests.framework */; };
 		AFA27FEF0D9B6F869EE57C3E /* Pods_BestSwiftRepos_BestSwiftReposUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D72EC18F1DE2A53A5E94B82 /* Pods_BestSwiftRepos_BestSwiftReposUITests.framework */; };
@@ -62,7 +63,7 @@
 		41FB44F024899F9100F11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41FB45032489A25300F11C9B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		41FB45052489A26600F11C9B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		41FB45072489A3A100F11C9B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		41FB45072489A3A100F11C9B /* RepositoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewController.swift; sourceTree = "<group>"; };
 		41FB45092489A72100F11C9B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		41FB450B2489A76600F11C9B /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		41FB450D2489AAFD00F11C9B /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		41FB45132489B51A00F11C9B /* RepositoriesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesResult.swift; sourceTree = "<group>"; };
 		41FB45152489B52600F11C9B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		41FB451F248B365200F11C9B /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		41FB4524248C313A00F11C9B /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		4E1A01C1BE411AF5480B1A9C /* Pods-BestSwiftRepos-BestSwiftReposUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestSwiftRepos-BestSwiftReposUITests.debug.xcconfig"; path = "Target Support Files/Pods-BestSwiftRepos-BestSwiftReposUITests/Pods-BestSwiftRepos-BestSwiftReposUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50FFED960BB71E0EADC1B7C7 /* Pods-BestSwiftReposTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestSwiftReposTests.debug.xcconfig"; path = "Target Support Files/Pods-BestSwiftReposTests/Pods-BestSwiftReposTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DFFCE3FE7D08D8413775083 /* Pods-BestSwiftRepos-BestSwiftReposUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestSwiftRepos-BestSwiftReposUITests.release.xcconfig"; path = "Target Support Files/Pods-BestSwiftRepos-BestSwiftReposUITests/Pods-BestSwiftRepos-BestSwiftReposUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		41FB44FC2489A06C00F11C9B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				41FB4524248C313A00F11C9B /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 		41FB44FE2489A09700F11C9B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				41FB45072489A3A100F11C9B /* MainViewController.swift */,
+				41FB4521248C2FFE00F11C9B /* RepositoriesList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -233,6 +236,30 @@
 				41FB45052489A26600F11C9B /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		41FB4521248C2FFE00F11C9B /* RepositoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				41FB4522248C301F00F11C9B /* Presenter */,
+				41FB4523248C302800F11C9B /* View */,
+			);
+			path = RepositoriesList;
+			sourceTree = "<group>";
+		};
+		41FB4522248C301F00F11C9B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41FB4523248C302800F11C9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41FB45072489A3A100F11C9B /* RepositoriesListViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AB415FE7C49814F222E1C923 /* Pods */ = {
@@ -492,9 +519,10 @@
 				41FB45062489A26600F11C9B /* MainCoordinator.swift in Sources */,
 				41FB44CF24899F8D00F11C9B /* SceneDelegate.swift in Sources */,
 				41FB45162489B52600F11C9B /* Repository.swift in Sources */,
+				41FB4525248C313B00F11C9B /* UITableViewExtension.swift in Sources */,
 				41FB4520248B365200F11C9B /* Author.swift in Sources */,
 				41FB45042489A25300F11C9B /* Coordinator.swift in Sources */,
-				41FB45082489A3A100F11C9B /* MainViewController.swift in Sources */,
+				41FB45082489A3A100F11C9B /* RepositoriesListViewController.swift in Sources */,
 				41FB45122489B49500F11C9B /* DataPackage.swift in Sources */,
 				41FB45142489B51A00F11C9B /* RepositoriesResult.swift in Sources */,
 				41FB450A2489A72100F11C9B /* APIError.swift in Sources */,
