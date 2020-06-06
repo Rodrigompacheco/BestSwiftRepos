@@ -18,5 +18,20 @@ class MainViewController: UIViewController {
         var backgroundView = UIView(frame: self.view.bounds)
         backgroundView.backgroundColor = .blue
         self.view.addSubview(backgroundView)
+        
+        
+        let apiProvider = APIProvider()
+        let endpoint = APIEndpoint.repositories(offset: 1)
+        
+        apiProvider.request(for: endpoint) { [weak self] (result: Result<RepositoriesResult, Error>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let dataPackage):
+                print("SUCESSO")
+                print(dataPackage)
+            case .failure(_):
+                print("FALHOU")
+            }
+        }
     }
 }
