@@ -11,6 +11,8 @@ import SnapKit
 
 final class RepositoryTableViewCell: UITableViewCell {
     
+    static let identifier = String(describing: RepositoryTableViewCell.self)
+    
     private var repositoryLabel = UILabel()
     private var starsLabel = UILabel()
     private var authorLabel = UILabel()
@@ -33,21 +35,23 @@ final class RepositoryTableViewCell: UITableViewCell {
         self.addSubview(cardView)
         
         cardView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalTo(10)
+            $0.top.leading.equalTo(10)
+            $0.bottom.trailing.equalTo(-10)
         }
         
         cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 10
         cardView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        cardView.layer.shadowRadius = 2
-        cardView.layer.shadowOpacity = 0.5
+        cardView.layer.shadowRadius = 10
+        cardView.layer.shadowOpacity = 0.7
     }
     
     private func setupRepositoryLabel() {
-        self.addSubview(repositoryLabel)
-        
+        cardView.addSubview(repositoryLabel)
+
         repositoryLabel.snp.makeConstraints {
-            $0.top.equalTo(20)
-            $0.leading.equalTo(5)
+            $0.top.equalTo(cardView).offset(screenBased(regular: -5, reduced: 3, extended: 10))
+            $0.leading.equalTo(10)
         }
     }
     
@@ -55,8 +59,8 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(starsLabel)
         
         starsLabel.snp.makeConstraints {
-            $0.top.equalTo(20)
-            $0.trailing.equalTo(5)
+            $0.centerY.equalTo(repositoryLabel)
+            $0.trailing.equalTo(cardView).offset(screenBased(regular: -5, reduced: 3, extended: -10))
         }
     }
     
@@ -64,8 +68,8 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(authorLabel)
         
         authorLabel.snp.makeConstraints {
-            $0.top.equalTo(lineSeparatorView).offset(screenBased(regular: -5, reduced: 3, extended: -10))
-            $0.leading.equalTo(5)
+            $0.top.equalTo(lineSeparatorView.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 20))
+            $0.leading.equalTo(repositoryLabel.snp.leading)
         }
     }
     
@@ -73,7 +77,7 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(repoNameLabel)
         
         repoNameLabel.snp.makeConstraints {
-            $0.top.equalTo(repositoryLabel).offset(screenBased(regular: -5, reduced: 3, extended: -10))
+            $0.top.equalTo(repositoryLabel.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 5))
             $0.leading.equalTo(repositoryLabel.snp.leading)
         }
     }
@@ -82,8 +86,8 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(repoStarsLabel)
         
         repoStarsLabel.snp.makeConstraints {
-            $0.top.equalTo(starsLabel).offset(screenBased(regular: -5, reduced: 3, extended: -10))
-            $0.trailing.equalTo(5)
+            $0.centerY.equalTo(repoNameLabel)
+            $0.trailing.equalTo(starsLabel.snp.trailing)
         }
     }
     
@@ -91,18 +95,21 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(authorAvatarImageView)
         
         authorAvatarImageView.snp.makeConstraints {
-            $0.top.equalTo(authorLabel).offset(screenBased(regular: -5, reduced: 3, extended: -10))
-            $0.leading.equalTo(authorLabel.snp.leading)
-            $0.bottom.equalTo(20)
+            $0.top.equalTo(lineSeparatorView.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 20))
+            $0.trailing.equalTo(starsLabel.snp.trailing)
+            $0.height.width.equalTo(48)
         }
+        
+        authorAvatarImageView.layer.cornerRadius = 10//authorAvatarImageView.frame.size.height/2
+        authorAvatarImageView.clipsToBounds = true
     }
     
     private func setupAuthorNameLabell() {
         cardView.addSubview(authorNameLabel)
         
         authorNameLabel.snp.makeConstraints {
-            $0.top.equalTo(authorAvatarImageView.snp.top)
-            $0.leading.equalTo(authorAvatarImageView).offset(5)
+            $0.top.equalTo(authorLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(authorLabel.snp.leading)
         }
     }
     
@@ -114,24 +121,30 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(lineSeparatorView)
         
         lineSeparatorView.snp.makeConstraints {
-            $0.top.equalTo(repoNameLabel).offset(screenBased(regular: -5, reduced: 3, extended: -10))
-            $0.leading.trailing.equalTo(10)
+            $0.top.equalTo(repoNameLabel.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 20))
+            $0.leading.equalTo(10)
+            $0.trailing.equalTo(-10)
+            $0.height.equalTo(1)
         }
+        
+        lineSeparatorView.backgroundColor = .black
     }
 }
 
 extension RepositoryTableViewCell: RepositoryTableItemView {
     func setupView() {
+        self.backgroundColor = AppPalleteColors.mainBackground
+
         setupCardView()
         setupRepositoryLabel()
         setupStarsLabel()
-        setupAuthorLabel()
         setupRepoNameLabel()
         setupRepoStarsLabel()
+        setupLineSeparatorView()
+        setupAuthorLabel()
         setupAuthorAvatarImageView()
         setupAuthorNameLabell()
-        setupStarsImageView()
-        setupLineSeparatorView()
+//        setupStarsImageView()
     }
     
     func setRepoTitle(_ title: String) {
@@ -139,7 +152,7 @@ extension RepositoryTableViewCell: RepositoryTableItemView {
     }
     
     func setRepoStarsTitle(_ title: String) {
-        repoStarsLabel.text = title
+        starsLabel.text = title
     }
     
     func setAuthorTitle(_ title: String) {
