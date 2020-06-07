@@ -34,7 +34,7 @@ class RepositoriesListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
-        tableView.backgroundColor = AppPalleteColors.mainBackground
+        tableView.backgroundColor = AppColorPalette.mainBackground
         
         tableView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()

@@ -133,7 +133,7 @@ final class RepositoryTableViewCell: UITableViewCell {
 
 extension RepositoryTableViewCell: RepositoryTableItemView {
     func setupView() {
-        self.backgroundColor = AppPalleteColors.mainBackground
+        self.backgroundColor = AppColorPalette.mainBackground
 
         setupCardView()
         setupRepositoryLabel()

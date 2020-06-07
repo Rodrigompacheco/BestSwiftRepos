@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
         
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.barStyle = .black
-        navigationController.navigationBar.barTintColor = AppPalleteColors.navigationBarColor
+        navigationController.navigationBar.barTintColor = AppColorPalette.navigationBarColor
         navigationController.navigationBar.tintColor = .white
     }
     
