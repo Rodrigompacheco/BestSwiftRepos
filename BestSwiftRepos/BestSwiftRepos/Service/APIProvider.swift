@@ -20,7 +20,7 @@ final class APIProvider {
                                completion: @escaping (Result<T, Error>) -> Void) {
         do {
             let url = try endpoint.makeUrl()
-            
+            print(url)
             session.dataTask(with: url) { (data, _, error) in
                 guard let data = data else {
                     let newError = error == nil ? APIError.invalidData : error!

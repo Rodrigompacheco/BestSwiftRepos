@@ -21,16 +21,18 @@ protocol RepositoryTableItemView: class {
 
 protocol RepositoriesView: class {
     func updateScrollTopBack(_ status: Bool)
-    func reloadData()
+    func reloadData(_ state: DataState)
     func showAlert(_ message: String)
 }
 
 protocol RepositoriesInput: class {
     var output: RepositoriesOutput? { get set }
-    func fetchRepositories(_ offset: Int)
+    func fetchRepositories()
+    func loadingStatus() -> Bool
+    func hasMoreToDownloadStatus() -> Bool
 }
 
 protocol RepositoriesOutput: class {
-    func requestSucceded(repositories: [Repository])
+    func requestSucceded(repositories: [Repository], state: DataState)
     func requestFailed(error: APIError)
 }
