@@ -1,5 +1,5 @@
 //
-//  NSObjectExtension.swift
+//  ActivityIndicatorProtocol.swift
 //  BestSwiftRepos
 //
 //  Created by Rodrigo Pacheco on 07/06/20.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension NSObject {
-    static var className: String {
-        return String(describing: self)
-    }
+protocol ActivityIndicatorTableItemView: class {
+    func setup()
+    func startAnimating()
+    func stopAnimating()
 }

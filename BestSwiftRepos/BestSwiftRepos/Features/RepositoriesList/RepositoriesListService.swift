@@ -12,25 +12,39 @@ class RepositoriesService {
     
     var output: RepositoriesOutput?
     private let api: APIProvider
+    private let paginator: Paginator<Repository>
     
     init(api: APIProvider = APIProvider()) {
         self.api = api
+        self.paginator = Paginator()
     }
 }
 
 extension RepositoriesService: RepositoriesInput {
-    func fetchRepositories(_ offset: Int) {
-        let endpoint = APIEndpoint.repositories(offset: offset)
+    func fetchRepositories() {
+        let endpoint = APIEndpoint.repositories(offset: paginator.offset)
         
-        api.request(for: endpoint) { [weak self] (result: Result<RepositoriesResult, Error>) in
+        paginator.isLoading = true
+        
+        api.request(for: endpoint) { [weak self] (result: Result<DataPackage<Repository>, Error>) in
             guard let self = self else { return }
             
             switch result {
-            case .success(let data):
-                self.output?.requestSucceded(repositories: data.items)
+            case .success(let dataPackage):
+                let state = self.paginator.paginate(dataPackage: dataPackage)
+                let repositories = self.paginator.results
+                self.output?.requestSucceded(repositories: repositories, state: state)
             case .failure(_):
                 self.output?.requestFailed(error: APIError.makeRequest)
             }
         }
+    }
+    
+    func loadingStatus() -> Bool {
+        return paginator.isLoading
+    }
+    
+    func hasMoreToDownloadStatus() -> Bool {
+        return paginator.hasMore
     }
 }

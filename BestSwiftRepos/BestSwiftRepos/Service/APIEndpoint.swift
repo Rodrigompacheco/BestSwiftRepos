@@ -14,6 +14,7 @@ enum APIEndpoint {
 
 extension APIEndpoint {
     static let baseUrl = "https://api.github.com"
+    static let limitPerPage = 20
     
     var path: String {
         switch self {
@@ -28,12 +29,13 @@ extension APIEndpoint {
         case .repositories(let offset):
             queryItems.append(contentsOf: [
                 URLQueryItem(name: "q", value: "language:swift"),
-                URLQueryItem(name: "per_page", value: offset.description)
+                URLQueryItem(name: "page", value: offset.description),
+                URLQueryItem(name: "per_page", value: String(APIEndpoint.limitPerPage))
             ])
         }
         return queryItems
     }
-    
+    //&page=1&per_page=10
     func makeUrl() throws -> URL {
         var components = URLComponents(string: APIEndpoint.baseUrl + path)
         components?.queryItems = queryItems

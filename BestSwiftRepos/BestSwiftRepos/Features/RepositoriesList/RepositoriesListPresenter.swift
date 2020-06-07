@@ -12,6 +12,7 @@ class RepositoriesListPresenter {
     
     private let service: RepositoriesInput
     private var repositories: [Repository] = []
+
     private weak var view: RepositoriesView?
     
     init(service: RepositoriesInput) {
@@ -21,7 +22,11 @@ class RepositoriesListPresenter {
     
     func attachView(view: RepositoriesView) {
         self.view = view
-        service.fetchRepositories(100)
+        fetchData()
+    }
+    
+    func fetchData() {
+        service.fetchRepositories()
     }
     
     func getTotalRepositories() -> Int {
@@ -33,12 +38,21 @@ class RepositoriesListPresenter {
         
         return repositories[index]
     }
+    
+    func isLoading() -> Bool {
+        return service.loadingStatus()
+    }
+    
+    func hasMoreToDownload() -> Bool {
+        return service.hasMoreToDownloadStatus()
+    }
 }
 
 extension RepositoriesListPresenter: RepositoriesOutput {
-    func requestSucceded(repositories: [Repository]) {
+    
+    func requestSucceded(repositories: [Repository], state: DataState) {
         self.repositories = repositories
-        view?.reloadData()
+        view?.reloadData(state)
     }
     
     func requestFailed(error: APIError) {
@@ -46,7 +60,7 @@ extension RepositoriesListPresenter: RepositoriesOutput {
         
         switch error {
         default:
-            errorMessage = "Erro ao carregar a lista"
+            errorMessage = "Número de requests excedido. Tente novamente em 60 minutos."
         }
         view?.showAlert(errorMessage)
     }
