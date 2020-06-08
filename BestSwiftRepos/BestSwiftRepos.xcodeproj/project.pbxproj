@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		41C1BB84248DB8F00048D9D9 /* RepositoriesListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1BB83248DB8F00048D9D9 /* RepositoriesListServiceTests.swift */; };
 		41C1BB86248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1BB85248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift */; };
+		41C1BB88248DD0CB0048D9D9 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1BB87248DD0CB0048D9D9 /* AppFonts.swift */; };
 		41FB44CD24899F8D00F11C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44CC24899F8D00F11C9B /* AppDelegate.swift */; };
 		41FB44CF24899F8D00F11C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44CE24899F8D00F11C9B /* SceneDelegate.swift */; };
 		41FB44D624899F9100F11C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41FB44D524899F9100F11C9B /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		24412D77B2D3B751CEB9E2E3 /* Pods-BestSwiftReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestSwiftReposTests.release.xcconfig"; path = "Target Support Files/Pods-BestSwiftReposTests/Pods-BestSwiftReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		41C1BB83248DB8F00048D9D9 /* RepositoriesListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListServiceTests.swift; sourceTree = "<group>"; };
 		41C1BB85248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableItemPresenterTests.swift; sourceTree = "<group>"; };
+		41C1BB87248DD0CB0048D9D9 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		41FB44C924899F8D00F11C9B /* BestSwiftRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestSwiftRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB44CC24899F8D00F11C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41FB44CE24899F8D00F11C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				41FB4533248C45E700F11C9B /* Global.swift */,
 				41FB453E248CBAFF00F11C9B /* AppColorPalette.swift */,
+				41C1BB87248DD0CB0048D9D9 /* AppFonts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				41FB45162489B52600F11C9B /* Repository.swift in Sources */,
 				41FB4530248C449200F11C9B /* UIViewExtension.swift in Sources */,
 				41FB4525248C313B00F11C9B /* UITableViewExtension.swift in Sources */,
+				41C1BB88248DD0CB0048D9D9 /* AppFonts.swift in Sources */,
 				41FB4534248C45E700F11C9B /* Global.swift in Sources */,
 				41FB4520248B365200F11C9B /* Author.swift in Sources */,
 				41FB453F248CBAFF00F11C9B /* AppColorPalette.swift in Sources */,
