@@ -144,6 +144,7 @@ final class RepositoryTableViewCell: UITableViewCell {
 
 extension RepositoryTableViewCell: RepositoryTableItemView {
     func setupView() {
+        self.selectionStyle = .none
         self.backgroundColor = AppColorPalette.mainBackground
 
         setupCardView()
