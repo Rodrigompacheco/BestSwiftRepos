@@ -14,7 +14,7 @@ enum APIError: Error {
 
 extension APIError {
     static var makeRequest: APIError {
-        return APIError.custom("Couldn't create request.")
+        return APIError.custom("Couldn't make request.")
     }
     
     static var decode: APIError {
