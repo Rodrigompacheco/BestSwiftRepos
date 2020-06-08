@@ -12,7 +12,6 @@ class MainCoordinator: Coordinator {
 
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-//    let marvelApiProvider: MarvelApiProvider = MarvelApiProvider()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
