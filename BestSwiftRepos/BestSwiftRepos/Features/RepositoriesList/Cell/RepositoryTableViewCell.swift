@@ -20,7 +20,6 @@ final class RepositoryTableViewCell: UITableViewCell {
     private var repoStarsLabel = UILabel()
     private var authorNameLabel = UILabel()
     private var authorAvatarImageView = UIImageView()
-    private var starsImageView = UIImageView()
     private var cardView = UIView()
     private var lineSeparatorView = UIView()
     
@@ -53,6 +52,8 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.top.equalTo(cardView).offset(screenBased(regular: -5, reduced: 3, extended: 10))
             $0.leading.equalTo(10)
         }
+        
+        repositoryLabel.font = AppFonts.cardTitle
     }
     
     private func setupStarsLabel() {
@@ -62,6 +63,8 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.centerY.equalTo(repositoryLabel)
             $0.trailing.equalTo(cardView).offset(screenBased(regular: -5, reduced: 3, extended: -10))
         }
+        
+        starsLabel.font = AppFonts.cardTitle
     }
     
     private func setupAuthorLabel() {
@@ -71,6 +74,8 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.top.equalTo(lineSeparatorView.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 20))
             $0.leading.equalTo(repositoryLabel.snp.leading)
         }
+        
+        authorLabel.font = AppFonts.cardTitle
     }
     
     private func setupRepoNameLabel() {
@@ -80,6 +85,9 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.top.equalTo(repositoryLabel.snp.bottom).offset(screenBased(regular: -5, reduced: 3, extended: 5))
             $0.leading.equalTo(repositoryLabel.snp.leading)
         }
+        
+        repoNameLabel.font = AppFonts.cardSubtitle
+        repoNameLabel.textColor = AppColorPalette.bluePetroleum
     }
     
     private func setupRepoStarsLabel() {
@@ -89,6 +97,9 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.centerY.equalTo(repoNameLabel)
             $0.trailing.equalTo(starsLabel.snp.trailing)
         }
+        
+        repoStarsLabel.font = AppFonts.cardSubtitle
+        repoStarsLabel.textColor = AppColorPalette.yellowGold
     }
     
     private func setupAuthorAvatarImageView() {
@@ -111,12 +122,11 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.top.equalTo(authorLabel.snp.bottom).offset(5)
             $0.leading.equalTo(authorLabel.snp.leading)
         }
+        
+        authorNameLabel.font = AppFonts.cardSubtitle
+        authorNameLabel.textColor = AppColorPalette.bluePetroleum
     }
-    
-    private func setupStarsImageView() {
 
-    }
-    
     private func setupLineSeparatorView() {
         cardView.addSubview(lineSeparatorView)
         
@@ -127,7 +137,8 @@ final class RepositoryTableViewCell: UITableViewCell {
             $0.height.equalTo(1)
         }
         
-        lineSeparatorView.backgroundColor = .black
+        lineSeparatorView.backgroundColor = .lightGray
+        lineSeparatorView.alpha = 0.5
     }
 }
 
@@ -144,7 +155,6 @@ extension RepositoryTableViewCell: RepositoryTableItemView {
         setupAuthorLabel()
         setupAuthorAvatarImageView()
         setupAuthorNameLabell()
-//        setupStarsImageView()
     }
     
     func setRepoTitle(_ title: String) {

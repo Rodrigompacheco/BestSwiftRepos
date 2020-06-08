@@ -115,8 +115,7 @@ extension RepositoriesListViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView.reachedBottom && !presenter.isLoading() && presenter.hasMoreToDownload() else { return }
         
-        let indexPath = IndexPath(item: 0, section: 1)
-        let footer = tableView.cellForRow(at: indexPath) as? ActivityIndicatorTableViewCell
+        let footer = tableView.cellForRow(at: IndexPath(item: 0, section: 1)) as? ActivityIndicatorTableViewCell
         footer?.startAnimating()
         
         presenter.fetchData()
@@ -130,8 +129,7 @@ extension RepositoriesListViewController: RepositoriesView {
     
     func reloadData(_ state: DataState) {
         DispatchQueue.main.async {
-            let indexPath = IndexPath(item: 0, section: 1)
-            let footer = self.tableView.cellForRow(at: indexPath) as? ActivityIndicatorTableViewCell
+            let footer = self.tableView.cellForRow(at: IndexPath(item: 0, section: 1)) as? ActivityIndicatorTableViewCell
             footer?.stopAnimating()
 
             self.updateUI(dataState: state)
@@ -139,6 +137,12 @@ extension RepositoriesListViewController: RepositoriesView {
     }
     
     func showAlert(_ message: String) {
-        print(message)
+        let footer = tableView.cellForRow(at: IndexPath(item: 0, section: 1)) as? ActivityIndicatorTableViewCell
+        footer?.stopAnimating()
+            
+        let alert = UIAlertController(title: "Alerta", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

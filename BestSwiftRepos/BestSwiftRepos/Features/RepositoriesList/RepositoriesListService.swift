@@ -11,10 +11,10 @@ import Foundation
 class RepositoriesService {
     
     var output: RepositoriesOutput?
-    private let api: APIProvider
+    private let api: Provider
     private let paginator: Paginator<Repository>
     
-    init(api: APIProvider = APIProvider()) {
+    init(api: Provider = APIProvider()) {
         self.api = api
         self.paginator = Paginator()
     }

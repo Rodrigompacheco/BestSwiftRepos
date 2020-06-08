@@ -8,7 +8,11 @@
 
 import Foundation
 
-final class APIProvider {
+protocol Provider: class {
+    func request<T: Decodable>(for endpoint: APIEndpoint, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+final class APIProvider: Provider {
     
     let session: URLSession
     
@@ -20,7 +24,7 @@ final class APIProvider {
                                completion: @escaping (Result<T, Error>) -> Void) {
         do {
             let url = try endpoint.makeUrl()
-            print(url)
+
             session.dataTask(with: url) { (data, _, error) in
                 guard let data = data else {
                     let newError = error == nil ? APIError.invalidData : error!

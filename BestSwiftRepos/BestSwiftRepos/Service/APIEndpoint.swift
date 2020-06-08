@@ -35,7 +35,7 @@ extension APIEndpoint {
         }
         return queryItems
     }
-    //&page=1&per_page=10
+
     func makeUrl() throws -> URL {
         var components = URLComponents(string: APIEndpoint.baseUrl + path)
         components?.queryItems = queryItems
