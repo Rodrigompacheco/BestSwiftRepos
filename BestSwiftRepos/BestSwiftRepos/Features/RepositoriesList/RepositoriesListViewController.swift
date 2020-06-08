@@ -13,6 +13,7 @@ class RepositoriesListViewController: UIViewController {
 
     private let presenter: RepositoriesListPresenter
     private let tableView = UITableView()
+    private let scrollBackButton = UIButton()
     
     init(presenter: RepositoriesListPresenter) {
         self.presenter = presenter
@@ -25,6 +26,7 @@ class RepositoriesListViewController: UIViewController {
         super.viewDidLoad()
     
         setupTableView()
+        setupScrollBackButton()
         presenter.attachView(view: self)
     }
     
@@ -42,6 +44,31 @@ class RepositoriesListViewController: UIViewController {
         
         tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: RepositoryTableViewCell.identifier)
         tableView.register(ActivityIndicatorTableViewCell.self, forCellReuseIdentifier: ActivityIndicatorTableViewCell.identifier)
+    }
+    
+    private func setupScrollBackButton() {
+        self.view.addSubview(scrollBackButton)
+        
+        scrollBackButton.snp.makeConstraints {
+            $0.trailing.equalTo(self.view).offset(screenBased(regular: -18, reduced: -15, extended: -20))
+            $0.bottom.equalTo(self.view).offset(screenBased(regular: -18, reduced: -15, extended: -20))
+            $0.height.width.equalTo(screenBased(regular: 60, reduced: 55, extended: 60))
+        }
+        
+        scrollBackButton.addTarget(self, action: #selector(scrollBackButtonPressed), for: .touchUpInside)
+        scrollBackButton.setImage(UIImage(named: "arrow_up"), for: .normal)
+        changeScrollBackBtnState(to: true)
+    }
+    
+    @objc func scrollBackButtonPressed() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+    private func changeScrollBackBtnState(to isHidden: Bool) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.scrollBackButton.alpha = isHidden ? 0 : 1
+        })
     }
     
     private func updateUI(dataState: DataState) {
@@ -104,7 +131,7 @@ extension RepositoriesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return screenBased(regular: 150, reduced: 100, extended: 200)
+            return screenBased(regular: 196, reduced: 188, extended: 200)
         } else {
             return 50
         }
@@ -113,6 +140,8 @@ extension RepositoriesListViewController: UITableViewDataSource {
 
 extension RepositoriesListViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        changeScrollBackBtnState(to: !(scrollView.contentOffset.y > 0))
+        
         guard scrollView.reachedBottom && !presenter.isLoading() && presenter.hasMoreToDownload() else { return }
         
         let footer = tableView.cellForRow(at: IndexPath(item: 0, section: 1)) as? ActivityIndicatorTableViewCell
