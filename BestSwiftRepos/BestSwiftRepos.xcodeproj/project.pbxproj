@@ -11,7 +11,7 @@
 		41FB44CF24899F8D00F11C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44CE24899F8D00F11C9B /* SceneDelegate.swift */; };
 		41FB44D624899F9100F11C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41FB44D524899F9100F11C9B /* Assets.xcassets */; };
 		41FB44D924899F9100F11C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41FB44D724899F9100F11C9B /* LaunchScreen.storyboard */; };
-		41FB44E424899F9100F11C9B /* BestSwiftReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44E324899F9100F11C9B /* BestSwiftReposTests.swift */; };
+		41FB44E424899F9100F11C9B /* RepositoriesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44E324899F9100F11C9B /* RepositoriesListPresenterTests.swift */; };
 		41FB44EF24899F9100F11C9B /* BestSwiftReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44EE24899F9100F11C9B /* BestSwiftReposUITests.swift */; };
 		41FB45042489A25300F11C9B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45032489A25300F11C9B /* Coordinator.swift */; };
 		41FB45062489A26600F11C9B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB45052489A26600F11C9B /* MainCoordinator.swift */; };
@@ -70,7 +70,7 @@
 		41FB44D824899F9100F11C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41FB44DA24899F9100F11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41FB44DF24899F9100F11C9B /* BestSwiftReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestSwiftReposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41FB44E324899F9100F11C9B /* BestSwiftReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSwiftReposTests.swift; sourceTree = "<group>"; };
+		41FB44E324899F9100F11C9B /* RepositoriesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListPresenterTests.swift; sourceTree = "<group>"; };
 		41FB44E524899F9100F11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41FB44EA24899F9100F11C9B /* BestSwiftReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestSwiftReposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB44EE24899F9100F11C9B /* BestSwiftReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSwiftReposUITests.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		41FB44E224899F9100F11C9B /* BestSwiftReposTests */ = {
 			isa = PBXGroup;
 			children = (
-				41FB44E324899F9100F11C9B /* BestSwiftReposTests.swift */,
+				41FB44E324899F9100F11C9B /* RepositoriesListPresenterTests.swift */,
 				41FB44E524899F9100F11C9B /* Info.plist */,
 			);
 			path = BestSwiftReposTests;
@@ -615,7 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FB44E424899F9100F11C9B /* BestSwiftReposTests.swift in Sources */,
+				41FB44E424899F9100F11C9B /* RepositoriesListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
