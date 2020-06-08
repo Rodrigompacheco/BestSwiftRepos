@@ -50,9 +50,9 @@ class RepositoriesListViewController: UIViewController {
         self.view.addSubview(scrollBackButton)
         
         scrollBackButton.snp.makeConstraints {
-            $0.trailing.equalTo(self.view).offset(-20)
-            $0.bottom.equalTo(self.view).offset(-20)
-            $0.height.width.equalTo(screenBased(regular: 20, reduced: 16, extended: 60))
+            $0.trailing.equalTo(self.view).offset(screenBased(regular: -18, reduced: -15, extended: -20))
+            $0.bottom.equalTo(self.view).offset(screenBased(regular: -18, reduced: -15, extended: -20))
+            $0.height.width.equalTo(screenBased(regular: 60, reduced: 55, extended: 60))
         }
         
         scrollBackButton.addTarget(self, action: #selector(scrollBackButtonPressed), for: .touchUpInside)
@@ -131,7 +131,7 @@ extension RepositoriesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return screenBased(regular: 150, reduced: 100, extended: 200)
+            return screenBased(regular: 196, reduced: 188, extended: 200)
         } else {
             return 50
         }
