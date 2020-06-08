@@ -19,17 +19,14 @@ class MainCoordinator: Coordinator {
         
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.barStyle = .black
-        navigationController.navigationBar.barTintColor = UIColor(red: 220/255, green: 55/255, blue: 48/255, alpha: 1.0)
+        navigationController.navigationBar.barTintColor = AppColorPalette.navigationBarColor
         navigationController.navigationBar.tintColor = .white
     }
     
     func start() {
-//        let presenter = CharactersListPresenter(marvelApiProvider: marvelApiProvider)
-//        presenter.presenterCoordinatorDelegate = self
-//        let viewController = CharactersListViewController(presenter: presenter)
-//        viewController.title = "Characters"
-//        navigationController.pushViewController(viewController, animated: false)
-        let viewController = MainViewController()
+        let service = RepositoriesService()
+        let viewController = RepositoriesListViewController(presenter: RepositoriesListPresenter(service: service))
+        viewController.title = "Repositórios"
         navigationController.pushViewController(viewController, animated: false)
     }
 }
