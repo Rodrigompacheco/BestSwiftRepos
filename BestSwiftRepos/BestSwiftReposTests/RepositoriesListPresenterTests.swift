@@ -15,7 +15,6 @@ import Nimble
 class RepositoriesListPresenterTests: QuickSpec {
     
     override func spec() {
-        
         var service: RepositoriesInputSpy!
         var view: RepositoriesViewSpy!
         var repositoriesListPresenter: RepositoriesListPresenter!

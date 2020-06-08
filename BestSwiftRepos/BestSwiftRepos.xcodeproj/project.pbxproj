@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41C1BB84248DB8F00048D9D9 /* RepositoriesListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1BB83248DB8F00048D9D9 /* RepositoriesListServiceTests.swift */; };
+		41C1BB86248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1BB85248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift */; };
 		41FB44CD24899F8D00F11C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44CC24899F8D00F11C9B /* AppDelegate.swift */; };
 		41FB44CF24899F8D00F11C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FB44CE24899F8D00F11C9B /* SceneDelegate.swift */; };
 		41FB44D624899F9100F11C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41FB44D524899F9100F11C9B /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		0D72EC18F1DE2A53A5E94B82 /* Pods_BestSwiftRepos_BestSwiftReposUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestSwiftRepos_BestSwiftReposUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24412D77B2D3B751CEB9E2E3 /* Pods-BestSwiftReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestSwiftReposTests.release.xcconfig"; path = "Target Support Files/Pods-BestSwiftReposTests/Pods-BestSwiftReposTests.release.xcconfig"; sourceTree = "<group>"; };
+		41C1BB83248DB8F00048D9D9 /* RepositoriesListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListServiceTests.swift; sourceTree = "<group>"; };
+		41C1BB85248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableItemPresenterTests.swift; sourceTree = "<group>"; };
 		41FB44C924899F8D00F11C9B /* BestSwiftRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestSwiftRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FB44CC24899F8D00F11C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41FB44CE24899F8D00F11C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				41FB44E324899F9100F11C9B /* RepositoriesListPresenterTests.swift */,
+				41C1BB83248DB8F00048D9D9 /* RepositoriesListServiceTests.swift */,
+				41C1BB85248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift */,
 				41FB44E524899F9100F11C9B /* Info.plist */,
 			);
 			path = BestSwiftReposTests;
@@ -616,6 +622,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41FB44E424899F9100F11C9B /* RepositoriesListPresenterTests.swift in Sources */,
+				41C1BB84248DB8F00048D9D9 /* RepositoriesListServiceTests.swift in Sources */,
+				41C1BB86248DC9060048D9D9 /* RepositoryTableItemPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
