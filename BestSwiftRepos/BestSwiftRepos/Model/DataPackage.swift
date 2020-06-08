@@ -41,18 +41,5 @@ final class Paginator<T> where T: Decodable {
         self.hasMore = self.results.count < dataPackage.totalCount
         self.isLoading = false
         return changeState
-//        if offset == 0 {
-//            self.results = dataPackage.items
-//            self.initialOffset = dataPackage.items.count
-//            self.offset = self.initialOffset
-//        } else {
-//            self.results.append(contentsOf: dataPackage.items.suffix(initialOffset))
-//        }
-//        let indexPaths = ((self.offset - self.initialOffset)..<self.results.count).map { IndexPath(row: $0, section: 0) }
-//        let changeState: DataState = self.offset == self.initialOffset ? .initial : .inserted(indexPaths)
-//        self.offset += self.initialOffset
-//        self.hasMore = self.results.count < dataPackage.totalCount
-//        self.isLoading = false
-//        return changeState
     }
 }
