@@ -49,7 +49,7 @@ final class RepositoryTableViewCell: UITableViewCell {
         cardView.addSubview(repositoryLabel)
 
         repositoryLabel.snp.makeConstraints {
-            $0.top.equalTo(cardView).offset(screenBased(regular: 10, reduced: 10, extended: 10))
+            $0.top.equalTo(cardView).offset(10)
             $0.leading.equalTo(10)
         }
         
@@ -61,7 +61,7 @@ final class RepositoryTableViewCell: UITableViewCell {
         
         starsLabel.snp.makeConstraints {
             $0.centerY.equalTo(repositoryLabel)
-            $0.trailing.equalTo(cardView).offset(screenBased(regular: -10, reduced: -10, extended: -10))
+            $0.trailing.equalTo(cardView).offset(-10)
         }
         
         starsLabel.font = AppFonts.cardTitle
